@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 class EDLoss(nn.Module):
-    def __init__(self, alpha=0.7, beta=0.0004, sigma, kernel_size):
+    def __init__(self, alpha=0.7, beta=0.00001, sigma, kernel_size):
         super(EDLoss, self).__init__()
         self.alpha = alpha
         self.beta = beta
