@@ -33,9 +33,9 @@ class EDLoss(nn.Module):
         gauss_2d = gauss_2d / gauss_2d.sum()
         
         kernel = gauss_2d.view(1, 1, kernel_size, kernel_size)
-        batch_4d = batch.unsqueeze(1)
+        batch_4d = batch
         
         padding = kernel_size // 2
         blurred = F.conv2d(batch_4d, kernel, padding=padding, groups=1)
         
-        return blurred.squeeze(1)
+        return blurred
